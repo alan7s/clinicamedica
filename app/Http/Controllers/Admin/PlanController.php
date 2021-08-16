@@ -3,11 +3,23 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Plan;
 use Illuminate\Http\Request;
 
 class PlanController extends Controller
 {
-    public function index(){
-        return view('admin.pages.plans.index');
+    private $repository;
+
+    public function __construct(Plan $plan)
+    {
+        $this->repository = $plan;
     }
+
+    public function index(){
+        $plans = $this->repository->latest()->paginate(10);
+        return view('admin.pages.plans.index', [
+            'plans' => $plans,
+        ]);
+    }
+
 }
