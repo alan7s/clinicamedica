@@ -1,20 +1,21 @@
 @extends('adminlte::page')
 
-@section('title', 'Cadastrar Novo Plano')
+@section('title', "Editar o {$plan->name}")
 
 @section('content_header')
-    <h1>Cadastrar Novo Plano</h1>
+    <h1>Editar o {{$plan->name}}</h1>
 @stop
 
 @section('content')
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('plans.store') }}" class="form" method="POST">
+            <form action="{{ route('plans.update', $plan->url) }}" class="form" method="POST">
                 @csrf
+                @method('PUT')
 
                 @include('admin.pages.plans._partials.form')
                 <div class="form-group">
-                    <button type="submit" class="btn btn-dark">Enviar</button>
+                    <button type="submit" class="btn btn-dark">Atualizar</button>
                 </div>
             </form>
         </div>

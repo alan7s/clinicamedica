@@ -228,6 +228,7 @@ return [
         [
             'text' => 'Planos',
             'url'  => 'admin/plans',
+            'icon' => 'fas fa-money-check-alt'
         ],
     ],
 
