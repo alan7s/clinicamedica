@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Detalhes do plano {$plan->name}')
+@section('title', 'Detalhes do {$plan->name}')
 
 @section('content_header')
-    <h1>Detalhes do plano <b>{{ $plan->name }}</b></h1>
+    <h1>Detalhes do <b>{{ $plan->name }}</b></h1>
 @stop
 
 @section('content')
@@ -23,6 +23,11 @@
                     <strong>Descrição: </strong> {{ $plan->description }}
                 </li>
             </ul>
+            <form action="{{ route('plans.destroy', $plan->url) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">DELETAR {{ $plan->name }}</button>
+            </form>
         </div>
     </div>
 @endsection    

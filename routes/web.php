@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\{
     PlanController
 };
 
+Route::delete('admin/plans/{url}', [PlanController::class, 'destroy'])->name('plans.destroy');
 Route::get('admin/plans/{url}', [PlanController::class, 'show'])->name('plans.show');
 Route::post('admin/plans', [PlanController::class, 'store'])->name('plans.store');
 Route::get('admin/plans/create', [PlanController::class, 'create'])->name('plans.create');
