@@ -54,4 +54,15 @@ class PlanController extends Controller
 
         return redirect()->route('plans.index');
     }
+
+    public function search(Request $request){
+        //dd($request->all());
+        $filters = $request->except('_token');
+        $plans = $this->repository->search($request->filter);
+
+        return view('admin.pages.plans.index', [
+            'plans' => $plans,
+            'filters' => $filters,
+        ]);
+    }
 }
