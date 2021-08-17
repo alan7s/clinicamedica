@@ -14,7 +14,7 @@
 
                 @include('admin.pages.plans._partials.form')
                 <div class="form-group">
-                    <button type="submit" class="btn btn-dark">Enviar</button>
+                    <button type="submit" class="btn btn-dark">Cadastrar</button>
                 </div>
             </form>
         </div>
