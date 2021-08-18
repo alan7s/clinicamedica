@@ -7,7 +7,7 @@
         <li class="breadcrumb-item active"><a href="{{ route('admin.index') }}">Dashboard</a></li>
         <li class="breadcrumb-item active"><a href="{{ route('profiles.index') }}">Perfis</a></li>
     </ol>
-    <h1>Perfis <a href="{{route('plans.create')}}" class="btn btn-dark"><i class="fas fa-plus-square"></i></a></h1>
+    <h1>Perfis <a href="{{route('profiles.create')}}" class="btn btn-dark"><i class="fas fa-plus-square"></i></a></h1>
 @stop
 
 @section('content')
@@ -38,7 +38,7 @@
                     @foreach ($profiles as $profile)
                         <tr>
                             <td>
-                                {{$profile->codigo}}
+                                {{$profile->id}}
                             </td>
                             <td>
                                 {{$profile->nome}}
@@ -65,9 +65,9 @@
                                 {{$profile->estado}}
                             </td>
                             <td>
-                                {{--<a href="{{ route('details.profile.index', $profile->url) }}" class="btn btn-info"><i class="fas fa-info-circle"></i></a>--}}
-                                <a href="{{ route('plans.edit', $profile->codigo) }}" class="btn btn-info"><i class="fas fa-pen-square"></i></a>
-                                <a href="{{ route('plans.show', $profile->codigo) }}" class="btn btn-info"><i class="fas fa-eye"></i></a>
+                                {{--<a href="{{ route('details.profile.index', $profile->url) }}" class="btn btn-info"><i class="fas fa-info-circle"></i></a>
+                                <a href="{{ route('profiles.edit', $profile->codigo) }}" class="btn btn-info"><i class="fas fa-pen-square"></i></a>
+                                <a href="{{ route('profiles.show', $profile->codigo) }}" class="btn btn-info"><i class="fas fa-eye"></i></a>--}}
                             </td>
                         </tr>
                     @endforeach

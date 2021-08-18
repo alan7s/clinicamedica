@@ -4,11 +4,19 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\{
     PlanController,
     DetailPlanController,
-    ACL\ProfileController
+    ACL\ProfileController,
+    ACL\EmployeeController
 };
 
 Route::prefix('admin')->group(function(){
+    //routes employees
+    Route::post('employees', [EmployeeController::class, 'store'])->name('employees.store');
+    Route::get('employees/create', [EmployeeController::class, 'create'])->name('employees.create');
+    Route::get('employees', [EmployeeController::class, 'index'])->name('employees.index');
+    
     //routes profiles
+    Route::post('profiles', [ProfileController::class, 'store'])->name('profiles.store');
+    Route::get('profiles/create', [ProfileController::class, 'create'])->name('profiles.create');
     Route::get('profiles', [ProfileController::class, 'index'])->name('profiles.index');
 
     //routes details plans
