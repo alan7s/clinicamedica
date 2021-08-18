@@ -9,7 +9,8 @@ class Profile extends Model
 {
     protected $fillable = ['nome','email','telefone','cep','logradouro','bairro','cidade','estado'];
 
-    public function employees(){
-        return $this->hasOne(Employee::class);
+    public function employees(){ //retorna employee do profile
+        return $this->belongsToMany(Employee::class);
     }
+
 }

@@ -66,8 +66,8 @@
                             </td>
                             <td>
                                 {{--<a href="{{ route('details.profile.index', $profile->url) }}" class="btn btn-info"><i class="fas fa-info-circle"></i></a>
-                                <a href="{{ route('profiles.edit', $profile->codigo) }}" class="btn btn-info"><i class="fas fa-pen-square"></i></a>
-                                <a href="{{ route('profiles.show', $profile->codigo) }}" class="btn btn-info"><i class="fas fa-eye"></i></a>--}}
+                                <a href="{{ route('profiles.edit', $profile->codigo) }}" class="btn btn-info"><i class="fas fa-pen-square"></i></a>--}}
+                                <a href="{{ route('profiles.employees', $profile->id) }}" class="btn btn-info"><i class="fas fa-info-circle"></i></a>
                             </td>
                         </tr>
                     @endforeach

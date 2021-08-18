@@ -10,7 +10,7 @@ class Employee extends Model
     protected $fillable = ['datacontrato', 'salario', 'senhahash'];
     protected $table = 'employees';
 
-    public function profiles(){
-        return $this->hasOne(Profile::class);
+    public function profiles(){ // retorna perfil de determinado employee
+        return $this->belongsToMany(Profile::class);
     }
 }

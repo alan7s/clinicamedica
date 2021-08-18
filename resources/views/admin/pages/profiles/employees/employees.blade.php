@@ -1,13 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'Perfis')
+@section('title', "Funcionário {$profile->nome}")
 
 @section('content_header')
     <ol class="breadcrumb">
         <li class="breadcrumb-item active"><a href="{{ route('admin.index') }}">Dashboard</a></li>
-        <li class="breadcrumb-item active"><a href="{{ route('employees.index') }}">Funcionários</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('profiles.index') }}">Perfis</a></li>
     </ol>
-    <h1>Funcionários <a href="{{route('employees.create')}}" class="btn btn-dark"><i class="fas fa-plus-square"></i></a></h1>
+    <h1>Funcionário {{$profile->nome}} <a href="{{route('profiles.create')}}" class="btn btn-dark"><i class="fas fa-plus-square"></i></a></h1>
 @stop
 
 @section('content')
@@ -23,10 +23,10 @@
             <table class="table table-condensed">
                 <thead>
                     <tr>
-                        <th>Codigo</th>
-                        <th>Data Contrato</th>
+                        <th>Codigo de Funcionário</th>
+                        <th>Data contratado</th>
                         <th>Salario</th>
-                        <th>SenhaHash</th>
+                        <th>senhaHash</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,9 +45,9 @@
                                 {{$employee->senhahash}}
                             </td>
                             <td>
-                                {{--<a href="{{ route('details.employee.index', $employee->url) }}" class="btn btn-info"><i class="fas fa-info-circle"></i></a>
-                                <a href="{{ route('employees.edit', $employee->id) }}" class="btn btn-info"><i class="fas fa-pen-square"></i></a>
-                                <a href="{{ route('employees.show', $employee->id) }}" class="btn btn-info"><i class="fas fa-eye"></i></a>--}}
+                                {{--<a href="{{ route('details.profile.index', $profile->url) }}" class="btn btn-info"><i class="fas fa-info-circle"></i></a>
+                                <a href="{{ route('profiles.edit', $profile->codigo) }}" class="btn btn-info"><i class="fas fa-pen-square"></i></a>
+                                <a href="{{ route('profiles.edit', $profile->id) }}" class="btn btn-info"><i class="fas fa-info-circle"></i></a>--}}
                             </td>
                         </tr>
                     @endforeach

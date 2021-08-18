@@ -5,10 +5,15 @@ use App\Http\Controllers\Admin\{
     PlanController,
     DetailPlanController,
     ACL\ProfileController,
-    ACL\EmployeeController
+    ACL\EmployeeController,
+    ACL\EmployeeProfileController
 };
 
 Route::prefix('admin')->group(function(){
+
+    //routes employee x profile
+    Route::get('profiles/{id}/employees', [EmployeeProfileController::class, 'employees'])->name('profiles.employees');
+
     //routes employees
     Route::post('employees', [EmployeeController::class, 'store'])->name('employees.store');
     Route::get('employees/create', [EmployeeController::class, 'create'])->name('employees.create');
