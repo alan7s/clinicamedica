@@ -3,10 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\{
     PlanController,
-    DetailPlanController
+    DetailPlanController,
+    ACL\ProfileController
 };
 
 Route::prefix('admin')->group(function(){
+    //routes profiles
+    Route::get('profiles', [ProfileController::class, 'index'])->name('profiles.index');
+
     //routes details plans
     Route::get('plans/{url}/details/create', [DetailPlanController::class, 'create'])->name('details.plan.create');
     Route::delete('plans/{url}/details/{idDetail}', [DetailPlanController::class, 'destroy'])->name('details.plan.destroy');
