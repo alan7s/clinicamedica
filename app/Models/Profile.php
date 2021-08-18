@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Profile extends Model
 {
     protected $fillable = ['nome','email','telefone','cep','logradouro','bairro','cidade','estado'];
+
+    public function employees(){
+        return $this->hasOne(Employee::class);
+    }
 }
