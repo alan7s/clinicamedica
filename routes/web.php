@@ -4,24 +4,30 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\{
     PlanController,
     DetailPlanController,
-    ACL\ProfileController,
-    ACL\EmployeeController,
-    ACL\EmployeeProfileController
+    ProfileController,
+    EmployeeController,
 };
 
 Route::prefix('admin')->group(function(){
 
-    //routes employee x profile
-    Route::get('profiles/{id}/employees', [EmployeeProfileController::class, 'employees'])->name('profiles.employees');
 
     //routes employees
-    Route::post('employees', [EmployeeController::class, 'store'])->name('employees.store');
-    Route::get('employees/create', [EmployeeController::class, 'create'])->name('employees.create');
-    Route::get('employees', [EmployeeController::class, 'index'])->name('employees.index');
+    Route::get('profiles/{id}/employees/create', [EmployeeController::class, 'create'])->name('employees.profile.create');
+    Route::delete('profiles/{id}/employees/{idEmployee}', [EmployeeController::class, 'destroy'])->name('employees.profile.destroy');
+    Route::get('profiles/{id}/employees/{idEmployee}', [EmployeeController::class, 'show'])->name('employees.profile.show');
+    Route::put('profiles/{id}/employees/{idEmployee}', [EmployeeController::class, 'update'])->name('employees.profile.update');
+    Route::get('profiles/{id}/employees/{idEmployee}/edit', [EmployeeController::class, 'edit'])->name('employees.profile.edit');
+    Route::post('profiles/{id}/employees', [EmployeeController::class, 'store'])->name('employees.profile.store');
+    Route::get('profiles/{id}/employees', [EmployeeController::class, 'index'])->name('employees.profile.index');
     
     //routes profiles
-    Route::post('profiles', [ProfileController::class, 'store'])->name('profiles.store');
     Route::get('profiles/create', [ProfileController::class, 'create'])->name('profiles.create');
+    Route::put('profiles/{id}', [ProfileController::class, 'update'])->name('profiles.update');
+    Route::get('profiles/{id}/edit', [ProfileController::class, 'edit'])->name('profiles.edit');
+    Route::any('profiles/search', [ProfileController::class, 'search'])->name('profiles.search');
+    Route::delete('profiles/{id}', [ProfileController::class, 'destroy'])->name('profiles.destroy');
+    Route::get('profiles/{id}', [ProfileController::class, 'show'])->name('profiles.show');
+    Route::post('profiles', [ProfileController::class, 'store'])->name('profiles.store');
     Route::get('profiles', [ProfileController::class, 'index'])->name('profiles.index');
 
     //routes details plans
@@ -31,7 +37,6 @@ Route::prefix('admin')->group(function(){
     Route::put('plans/{url}/details/{idDetail}', [DetailPlanController::class, 'update'])->name('details.plan.update');
     Route::get('plans/{url}/details/{idDetail}/edit', [DetailPlanController::class, 'edit'])->name('details.plan.edit');
     Route::post('plans/{url}/details', [DetailPlanController::class, 'store'])->name('details.plan.store');
-
     Route::get('plans/{url}/details', [DetailPlanController::class, 'index'])->name('details.plan.index');
 
     //routes Plans
