@@ -11,6 +11,6 @@ class Employee extends Model
     protected $table = 'employees';
 
     public function profiles(){ // retorna perfil de determinado employee
-        return $this->belongsToMany(Profile::class);
+        $this->belongsTo(Profile::class);
     }
 }

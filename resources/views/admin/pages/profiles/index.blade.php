@@ -1,19 +1,19 @@
 @extends('adminlte::page')
 
-@section('title', 'Perfis')
+@section('title', 'profiles')
 
 @section('content_header')
     <ol class="breadcrumb">
         <li class="breadcrumb-item active"><a href="{{ route('admin.index') }}">Dashboard</a></li>
-        <li class="breadcrumb-item active"><a href="{{ route('profiles.index') }}">Perfis</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('profiles.index') }}">profileos</a></li>
     </ol>
-    <h1>Perfis <a href="{{route('profiles.create')}}" class="btn btn-dark"><i class="fas fa-plus-square"></i></a></h1>
+    <h1>profileos <a href="{{route('profiles.create')}}" class="btn btn-dark"><i class="fas fa-plus-square"></i></a></h1>
 @stop
 
 @section('content')
     <div class="card">
         <div class="card-header">
-            <form action="{{route('plans.search')}}" method="POST" class="form form-inline">
+            <form action="{{route('profiles.search')}}" method="POST" class="form form-inline">
                 @csrf
                 <input type="text" name="filter" placeholder="Pesquisar" class="form-control" value="{{ $filters['filter'] ?? '' }}">
                 <button type="submit" class="btn btn-dark"><i class="fas fa-search"></i></button>
@@ -65,9 +65,9 @@
                                 {{$profile->estado}}
                             </td>
                             <td>
-                                {{--<a href="{{ route('details.profile.index', $profile->url) }}" class="btn btn-info"><i class="fas fa-info-circle"></i></a>
-                                <a href="{{ route('profiles.edit', $profile->codigo) }}" class="btn btn-info"><i class="fas fa-pen-square"></i></a>--}}
-                                <a href="{{ route('profiles.employees', $profile->id) }}" class="btn btn-info"><i class="fas fa-info-circle"></i></a>
+                                <a href="{{ route('employees.profile.index', $profile->id) }}" class="btn btn-info"><i class="fas fa-info-circle"></i></a>
+                                <a href="{{ route('profiles.edit', $profile->id) }}" class="btn btn-info"><i class="fas fa-pen-square"></i></a>
+                                <a href="{{ route('profiles.show', $profile->id) }}" class="btn btn-info"><i class="fas fa-eye"></i></a>
                             </td>
                         </tr>
                     @endforeach

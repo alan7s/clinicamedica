@@ -235,11 +235,6 @@ return [
             'url'  => 'admin/profiles',
             'icon' => 'fas fa-address-book'
         ],
-        [
-            'text' => 'Funcionarios',
-            'url'  => 'admin/employees',
-            'icon' => 'fas fa-address-book'
-        ],
     ],
 
     /*

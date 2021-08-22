@@ -1,4 +1,4 @@
-@csrf
+@include('admin.includes.alerts')
 <div class="form-group">
     <label>Nome:</label>
     <input type="text" name="nome" class="form-control" placeholder="Nome" value="{{ $profile->nome ?? old('nome') }}">

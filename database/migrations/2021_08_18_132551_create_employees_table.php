@@ -18,7 +18,10 @@ class CreateEmployeesTable extends Migration
             $table->date('datacontrato');
             $table->float('salario');
             $table->string('senhahash');
+            $table->unsignedBigInteger('profile_id');
             $table->timestamps();
+
+            $table->foreign('profile_id')->references('id')->on('profiles')->onDelete('cascade');
         });
     }
 
