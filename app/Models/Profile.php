@@ -13,6 +13,10 @@ class Profile extends Model
         return $this->hasMany(Employee::class);
     }
 
+    public function patients(){ //retorna patient do profile
+        return $this->hasMany(Patient::class);
+    }
+
     public function search($filter = null){
         $results = $this->where('nome', 'LIKE', "%{$filter}%")
                         ->orWhere('email', 'LIKE', "%{$filter}%")

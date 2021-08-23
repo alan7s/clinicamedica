@@ -6,10 +6,20 @@ use App\Http\Controllers\Admin\{
     DetailPlanController,
     ProfileController,
     EmployeeController,
+    PatientController
 };
 
 Route::prefix('admin')->group(function(){
 
+
+    //routes patients
+    Route::get('profiles/{id}/patients/create', [PatientController::class, 'create'])->name('patients.profile.create');
+    Route::delete('profiles/{id}/patients/{idpatient}', [PatientController::class, 'destroy'])->name('patients.profile.destroy');
+    Route::get('profiles/{id}/patients/{idpatient}', [PatientController::class, 'show'])->name('patients.profile.show');
+    Route::put('profiles/{id}/patients/{idpatient}', [PatientController::class, 'update'])->name('patients.profile.update');
+    Route::get('profiles/{id}/patients/{idpatient}/edit', [PatientController::class, 'edit'])->name('patients.profile.edit');
+    Route::post('profiles/{id}/patients', [PatientController::class, 'store'])->name('patients.profile.store');
+    Route::get('profiles/{id}/patients', [PatientController::class, 'index'])->name('patients.profile.index');
 
     //routes employees
     Route::get('profiles/{id}/employees/create', [EmployeeController::class, 'create'])->name('employees.profile.create');

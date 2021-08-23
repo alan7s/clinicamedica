@@ -5,12 +5,12 @@
 @section('content_header')
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('profiles.index') }}">profile</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('profiles.index') }}">Perfis</a></li>
         <li class="breadcrumb-item"><a href="{{ route('profiles.show', $profile->id) }}">{{$profile->name}}</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('employees.profile.create', $profile->id) }}">Detalhes</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('employees.profile.create', $profile->id) }}">Funcionário</a></li>
         <li class="breadcrumb-item active"><a href="{{ route('employees.profile.create', [$profile->id, $employee->id]) }}">Editar</a></li>
     </ol>
-    <h1>Editar {{$employee->name}}</h1>
+    <h1>Editar funcionário: {{$employee->name}}</h1>
 @stop
 
 @section('content')

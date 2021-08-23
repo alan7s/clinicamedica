@@ -7,8 +7,8 @@
         <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Dashboard</a></li>
         <li class="breadcrumb-item"><a href="{{ route('profiles.index') }}">profileos</a></li>
         <li class="breadcrumb-item"><a href="{{ route('profiles.show', $profile->id) }}">{{$profile->nome}}</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('employees.profile.create', $profile->id) }}">Detalhes</a></li>
-        <li class="breadcrumb-item active"><a href="{{ route('employees.profile.create', [$profile->id, $employee->id]) }}">Detalhes</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('patients.profile.create', $profile->id) }}">Detalhes</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('patients.profile.create', [$profile->id, $patient->id]) }}">Detalhes</a></li>
     </ol>
     <h1>Editar {{$profile->nome}}</h1>
 @stop
@@ -21,10 +21,10 @@
             </ul>
         </div>
         <div class="card-footer">
-            <form action="{{route('employees.profile.destroy', [$profile->id, $employee->id])}}" method="post">
+            <form action="{{route('patients.profile.destroy', [$profile->id, $patient->id])}}" method="post">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-danger">Deletar o detalhe do {{$profile->nome}}</button>
+            <button type="submit" class="btn btn-danger">Deletar paciente {{$profile->nome}}</button>
             </form>
         </div>
     </div>
