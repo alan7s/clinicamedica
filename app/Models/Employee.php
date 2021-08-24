@@ -13,4 +13,8 @@ class Employee extends Model
     public function profiles(){ // retorna perfil de determinado employee
         $this->belongsTo(Profile::class);
     }
+
+    public function doctors(){ //retorna doctor do employee
+        return $this->hasMany(Doctor::class);
+    }
 }

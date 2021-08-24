@@ -33,6 +33,7 @@
                                 {{$employee->datacontrato}}
                             </td>
                             <td>
+                                <a href="{{ route('doctors.employee.profile.index', [$employee->id]) }}" class="btn btn-info"><i class="fas fa-info-circle"></i></a>
                                 <a href="{{ route('employees.profile.edit', [$profile->id, $employee->id]) }}" class="btn btn-info"><i class="fas fa-pen-square"></i></a>
                                 <a href="{{ route('employees.profile.show', [$profile->id, $employee->id]) }}" class="btn btn-info"><i class="fas fa-eye"></i></a>
                             </td>

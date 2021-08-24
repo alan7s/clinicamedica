@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\{
     PlanController,
     DetailPlanController,
+    DoctorController,
     ProfileController,
     EmployeeController,
     PatientController
@@ -11,6 +12,14 @@ use App\Http\Controllers\Admin\{
 
 Route::prefix('admin')->group(function(){
 
+    //routes doctors
+    Route::get('employees/{idEmployee}/doctors/create', [DoctorController::class, 'create'])->name('doctors.employee.profile.create');
+    Route::delete('employees/{idEmployee}/doctors/{iddoctor}', [DoctorController::class, 'destroy'])->name('doctors.employee.profile.destroy');
+    Route::get('employees/{idEmployee}/doctors/{iddoctor}', [DoctorController::class, 'show'])->name('doctors.employee.profile.show');
+    Route::put('employees/{idEmployee}/doctors/{iddoctor}', [DoctorController::class, 'update'])->name('doctors.employee.profile.update');
+    Route::get('employees/{idEmployee}/doctors/{iddoctor}/edit', [DoctorController::class, 'edit'])->name('doctors.employee.profile.edit');
+    Route::post('employees/{idEmployee}/doctors/', [DoctorController::class, 'store'])->name('doctors.employee.profile.store');
+    Route::get('employees/{idEmployee}/doctors/', [DoctorController::class, 'index'])->name('doctors.employee.profile.index');    
 
     //routes patients
     Route::get('profiles/{id}/patients/create', [PatientController::class, 'create'])->name('patients.profile.create');
