@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', "Detalhes do {{$profile = $this->employee->where('id', $idEmployee)->first()}}")
+@section('title', "Detalhes do médico ")
 
 @section('content_header')
     <ol class="breadcrumb">
@@ -9,7 +9,7 @@
         {{--<li class="breadcrumb-item active"><a href="{{ route('profiles.show', $profile->id) }}">{{$profile->nome}}</a></li>--}}
         {{--<li class="breadcrumb-item active"><a href="{{ route('employees.profile.index', $profile->id) }}">Detalhes</a></li>--}}
     </ol>
-    {{--<h1>Detalhes do {{$profile->nome}}<a href="{{route('employees.profile.create', $profile->id)}}" class="btn btn-dark"><i class="fas fa-plus-square"></i></a></h1>--}}
+    <h1>Detalhes do médico {{$profile->where('id', $employee->profile_id)->first()->nome}}<i class="fas fa-plus-square"></i></h1>
 @stop
 
 @section('content')

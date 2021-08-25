@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', "Detalhes do {$profile->name}")
+@section('title', "Detalhes do {$profile->nome}")
 
 @section('content_header')
     <ol class="breadcrumb">

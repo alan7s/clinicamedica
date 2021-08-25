@@ -6,26 +6,29 @@ use App\Http\Requests\StoreUpdateDoctor;
 use App\Http\Controllers\Controller;
 use App\Models\Doctor;
 use App\Models\Employee;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 
 class DoctorController extends Controller
 {
     protected $repository, $employee;
-    public function __construct(Doctor $doctor, Employee $employee)
+    public function __construct(Doctor $doctor, Employee $employee, Profile $profile)
     {
         $this->repository = $doctor;
         $this->employee = $employee;
+        $this->profile = $profile;
     }
 
     public function index($idEmployee){
         if(!$employee = $this->employee->where('id', $idEmployee)->first()){
             return redirect()->back();
         }
-
+        $profile = $this->profile;
         //$doctors = $employee->doctors();
         $doctors = $employee->doctors()->paginate();
 
         return view('admin.pages.profiles.employees.doctors.index', [
+            'profile' => $profile,
             'employee' => $employee,
             'doctors' => $doctors,
         ]);
