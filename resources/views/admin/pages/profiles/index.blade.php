@@ -1,13 +1,13 @@
 @extends('adminlte::page')
 
-@section('title', 'profiles')
+@section('title', 'Perfis')
 
 @section('content_header')
     <ol class="breadcrumb">
         <li class="breadcrumb-item active"><a href="{{ route('admin.index') }}">Dashboard</a></li>
-        <li class="breadcrumb-item active"><a href="{{ route('profiles.index') }}">profileos</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('profiles.index') }}">Perfis</a></li>
     </ol>
-    <h1>profileos <a href="{{route('profiles.create')}}" class="btn btn-dark"><i class="fas fa-plus-square"></i></a></h1>
+    <h1>Perfis <a href="{{route('profiles.create')}}" class="btn btn-dark"><i class="fas fa-plus-square"></i></a></h1>
 @stop
 
 @section('content')
@@ -65,8 +65,8 @@
                                 {{$profile->estado}}
                             </td>
                             <td>
-                                <a href="{{ route('patients.profile.index', $profile->id) }}" class="btn btn-info"><i class="fas fa-info-circle"></i></a>
-                                <a href="{{ route('employees.profile.index', $profile->id) }}" class="btn btn-info"><i class="fas fa-info-circle"></i></a>
+                                <a href="{{ route('patients.profile.index', $profile->id) }}" class="btn btn-info"><i class="fas fa-user-tag"></i></a>
+                                <a href="{{ route('employees.profile.index', $profile->id) }}" class="btn btn-info"><i class="fas fa-user-tie"></i></a>
                                 <a href="{{ route('profiles.edit', $profile->id) }}" class="btn btn-info"><i class="fas fa-pen-square"></i></a>
                                 <a href="{{ route('profiles.show', $profile->id) }}" class="btn btn-info"><i class="fas fa-eye"></i></a>
                             </td>

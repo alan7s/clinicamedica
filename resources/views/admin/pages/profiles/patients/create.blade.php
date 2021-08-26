@@ -1,15 +1,15 @@
 @extends('adminlte::page')
 
-@section('title', "Adicionar novo detalhe ao {$profile->nome}")
+@section('title', "Adicionar dados ao paciente {$profile->nome}")
 
 @section('content_header')
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('profiles.index') }}">profile</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('profiles.show', $profile->id) }}">{{$profile->nome}}</a></li>
-        <li class="breadcrumb-item active"><a href="{{ route('patients.profile.create', $profile->id) }}">Detalhes</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('admin.index') }}">Dashboard</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('profiles.index') }}">Profile</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('patients.profile.index', $profile->id) }}">{{$profile->nome}}</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('patients.profile.create', [$profile->id]) }}">Adicionar</a></li>
     </ol>
-    <h1>Adicionar novo detalhe ao {{$profile->nome}}</h1>
+    <h1>Adicionar dados ao paciente {{$profile->nome}}</h1>
 @stop
 
 @section('content')
