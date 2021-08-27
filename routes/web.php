@@ -7,10 +7,21 @@ use App\Http\Controllers\Admin\{
     DoctorController,
     ProfileController,
     EmployeeController,
+    EnderecoController,
     PatientController
 };
 
 Route::prefix('admin')->group(function(){
+
+    //routes enderecos
+    Route::get('enderecos/create', [EnderecoController::class, 'create'])->name('enderecos.create');
+    Route::put('enderecos/{id}', [EnderecoController::class, 'update'])->name('enderecos.update');
+    Route::get('enderecos/{id}/edit', [EnderecoController::class, 'edit'])->name('enderecos.edit');
+    Route::any('enderecos/search', [EnderecoController::class, 'search'])->name('enderecos.search');
+    Route::delete('enderecos/{id}', [EnderecoController::class, 'destroy'])->name('enderecos.destroy');
+    Route::get('enderecos/{id}', [EnderecoController::class, 'show'])->name('enderecos.show');
+    Route::post('enderecos', [EnderecoController::class, 'store'])->name('enderecos.store');
+    Route::get('enderecos', [EnderecoController::class, 'index'])->name('enderecos.index');
 
     //routes doctors
     Route::get('employees/{idEmployee}/doctors/create', [DoctorController::class, 'create'])->name('doctors.employee.profile.create');

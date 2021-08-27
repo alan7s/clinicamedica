@@ -1,30 +1,32 @@
 @extends('adminlte::page')
 
-@section('title', "Detalhes {$profile->nome}")
+@section('title', "Funcionário {$profile->nome}")
 
 @section('content_header')
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Dashboard</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('profiles.index') }}">profileos</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('profiles.show', $profile->id) }}">{{$profile->nome}}</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('employees.profile.create', $profile->id) }}">Detalhes</a></li>
-        <li class="breadcrumb-item active"><a href="{{ route('employees.profile.create', [$profile->id, $employee->id]) }}">Detalhes</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('admin.index') }}">Dashboard</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('profiles.index') }}">Profile</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('employees.profile.index', $profile->id) }}">{{$profile->nome}}</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('employees.profile.show', [$profile->id, $employee->id]) }}">Deletar</a></li>
     </ol>
-    <h1>Editar {{$profile->nome}}</h1>
+    <h1>Deletar funcionário {{$profile->nome}}</h1>
 @stop
 
 @section('content')
     <div class="card">
         <div class="card-body">
             <ul>
-                <li><strong>Nome:</strong> {{$profile->nome}}</li>
+                <li><strong>ID:</strong> {{$employee->id}}</li>
+                <li><strong>Data contrato:</strong> {{$employee->datacontrato}}</li>
+                <li><strong>Salário:</strong> {{$employee->salario}}</li>
+                <li><strong>SenhaHash:</strong> {{$employee->senhahash}}</li>
             </ul>
         </div>
         <div class="card-footer">
             <form action="{{route('employees.profile.destroy', [$profile->id, $employee->id])}}" method="post">
             @csrf
             @method('DELETE')
-            <button type="submit" class="btn btn-danger">Deletar o detalhe do {{$profile->nome}}</button>
+            <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i>Deletar funcionário {{$profile->nome}}</button>
             </form>
         </div>
     </div>

@@ -1,15 +1,14 @@
 @extends('adminlte::page')
 
-@section('title', "Detalhes do {$profile->nome}")
+@section('title', "Funcionário {$profile->nome}")
 
 @section('content_header')
     <ol class="breadcrumb">
         <li class="breadcrumb-item active"><a href="{{ route('admin.index') }}">Dashboard</a></li>
-        <li class="breadcrumb-item active"><a href="{{ route('profiles.index') }}">profile</a></li>
-        <li class="breadcrumb-item active"><a href="{{ route('profiles.show', $profile->id) }}">{{$profile->nome}}</a></li>
-        <li class="breadcrumb-item active"><a href="{{ route('employees.profile.index', $profile->id) }}">Detalhes</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('profiles.index') }}">Perfis</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('employees.profile.index', $profile->id) }}">Funcionário</a></li>
     </ol>
-    <h1>Detalhes do {{$profile->nome}}<a href="{{route('employees.profile.create', $profile->id)}}" class="btn btn-dark"><i class="fas fa-plus-square"></i></a></h1>
+    <h1>Funcionário {{$profile->nome}}<a href="{{route('employees.profile.create', $profile->id)}}" class="btn btn-dark"><i class="fas fa-plus-square"></i></a></h1>
 @stop
 
 @section('content')
@@ -21,6 +20,7 @@
                     <tr>
                         <th>id</th>
                         <th>Data contrato</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>

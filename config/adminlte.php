@@ -235,6 +235,11 @@ return [
             'url'  => 'admin/profiles',
             'icon' => 'fas fa-address-book'
         ],
+        [
+            'text' => 'Endereços',
+            'url'  => 'admin/enderecos',
+            'icon' => 'fas fa-map-marked'
+        ],
     ],
 
     /*

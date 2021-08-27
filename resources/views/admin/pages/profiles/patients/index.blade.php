@@ -22,6 +22,7 @@
                         <th>Peso</th>
                         <th>Altura</th>
                         <th>Tipo Sanguineo</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>

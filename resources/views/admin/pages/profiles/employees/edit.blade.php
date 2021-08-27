@@ -1,16 +1,16 @@
 @extends('adminlte::page')
 
-@section('title', "Editar {$employee->name}")
+@section('title', "Funcionário {$employee->nome}")
 
 @section('content_header')
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Dashboard</a></li>
         <li class="breadcrumb-item"><a href="{{ route('profiles.index') }}">Perfis</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('profiles.show', $profile->id) }}">{{$profile->name}}</a></li>
-        <li class="breadcrumb-item"><a href="{{ route('employees.profile.create', $profile->id) }}">Funcionário</a></li>
-        <li class="breadcrumb-item active"><a href="{{ route('employees.profile.create', [$profile->id, $employee->id]) }}">Editar</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('profiles.show', $profile->id) }}">{{$profile->nome}}</a></li>
+        <li class="breadcrumb-item"><a href="{{ route('employees.profile.index', $profile->id) }}">Funcionário</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('employees.profile.edit', [$profile->id, $employee->id]) }}">Editar</a></li>
     </ol>
-    <h1>Editar funcionário: {{$employee->name}}</h1>
+    <h1>Editar funcionário {{$employee->nome}}</h1>
 @stop
 
 @section('content')

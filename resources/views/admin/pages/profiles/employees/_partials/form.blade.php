@@ -3,15 +3,15 @@
 @csrf
 
 <div class="form-group">
-    <label>datacontrato:</label>
+    <label>Data Contrato:</label>
     <input type="text" name="datacontrato" class="form-control" placeholder="Nome" value="{{$employee->datacontrato ?? old('datacontrato')}}">
 </div>
 <div class="form-group">
-    <label>salario:</label>
+    <label>Salario:</label>
     <input type="text" name="salario" class="form-control" placeholder="Nome" value="{{$employee->salario ?? old('salario')}}">
 </div>
 <div class="form-group">
-    <label>senhahash:</label>
+    <label>SenhaHash:</label>
     <input type="text" name="senhahash" class="form-control" placeholder="Nome" value="{{$employee->senhahash ?? old('senhahash')}}">
 </div>
 <div class="form-group">
