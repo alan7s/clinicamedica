@@ -9,7 +9,7 @@
         {{--<li class="breadcrumb-item active"><a href="{{ route('profiles.show', $profile->id) }}">{{$profile->nome}}</a></li>--}}
         {{--<li class="breadcrumb-item active"><a href="{{ route('employees.profile.index', $profile->id) }}">Detalhes</a></li>--}}
     </ol>
-    <h1>Agenda do médico<a href="{{route('agendas.doctor.employee.profile.create', [$doctors->id])}}" class="btn btn-dark"><i class="fas fa-plus-square"></i></a></h1>
+    <h1>Agenda do médico <a href="{{route('agendas.doctor.employee.profile.create', [$doctor->id])}}" class="btn btn-dark"><i class="fas fa-plus-square"></i></a></h1>
 @stop
 
 @section('content')
@@ -25,7 +25,7 @@
                         <th>Nome</th>
                         <th>Email</th>
                         <th>Telefone</th>
-                        <th>CRM</th>
+                        <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,11 +50,8 @@
                                 {{$agenda->telefone}}
                             </td>
                             <td>
-                                {{$agenda->doctor_id}}
-                            </td>
-                            <td>
-                                {{--<a href="{{ route('employees.profile.edit', [$employee->id]) }}" class="btn btn-info"><i class="fas fa-pen-square"></i></a>
-                                <a href="{{ route('employees.profile.show', [$employee->id]) }}" class="btn btn-info"><i class="fas fa-eye"></i></a>--}}
+                                <a href="{{ route('agendas.doctor.employee.profile.edit', [$doctor->id, $agenda->id]) }}" class="btn btn-info"><i class="fas fa-pen-square"></i></a>
+                                <a href="{{ route('agendas.doctor.employee.profile.show', [$doctor->id, $agenda->id]) }}" class="btn btn-info"><i class="fas fa-eye"></i></a>
                             </td>
                         </tr>
                     @endforeach

@@ -8,7 +8,7 @@
 </div>
 <div class="form-group">
     <label>CRM:</label>
-    <input type="text" name="crm" class="form-control" placeholder="crm" value="{{$doctors->crm ?? old('crm')}}">
+    <input type="text" name="crm" class="form-control" placeholder="crm" value="{{$doctor->crm ?? old('crm')}}">
 </div>
 <div class="form-group">
     <button type="submit" class="btn btn-info">Salvar</button>

@@ -34,7 +34,7 @@ class AgendaController extends Controller
         return view('admin.pages.profiles.employees.doctors.agendas.index', [
             'profile' => $profile,
             'employee' => $employee,
-            'doctors' => $doctor,
+            'doctor' => $doctor,
             'agendas' => $agendas
         ]);
     }
@@ -43,9 +43,9 @@ class AgendaController extends Controller
         if(!$doctor = $this->doctor->where('id', $idDoctor)->first()){
             return redirect()->back();
         }
-        $profile = $this->profile;
         $employee = $this->employee;
-        return view('admin.pages.profiles.doctors.doctors.create', [
+        $profile = $this->profile;
+        return view('admin.pages.profiles.employees.doctors.agendas.create', [
             'profile' => $profile,
             'employee' => $employee,
             'doctor' => $doctor,
@@ -62,21 +62,26 @@ class AgendaController extends Controller
     }
 
     public function edit($idDoctor, $idAgenda){
-        $doctor = $this->doctor->where('id',$idDoctor)->first();
+        $doctor = $this->doctor->where('id',$idAgenda)->first();
         $agenda = $this->repository->find($idAgenda);
+        
+        $employee = $this->employee;
+        $profile = $this->profile;
 
-        if(!$doctor = $this->doctor->where('id', $idAgenda)->first()){
+        if(!$doctor = $this->doctor->where('id', $idDoctor)->first()){
             return redirect()->back();
         }
 
         return view('admin.pages.profiles.employees.doctors.agendas.edit', [
+            'profile' => $profile,
+            'employee' => $employee,
             'doctor' => $doctor,
             'agenda' => $agenda,
         ]);
     }
 
     public function update(StoreUpdateAgenda $request, $idDoctor, $idAgenda){
-        $doctor = $this->doctor->where('id',$idAgenda)->first();
+        $doctor = $this->doctor->where('id',$idDoctor)->first();
         $agenda = $this->repository->find($idAgenda);
 
         if(!$doctor || !$agenda){
