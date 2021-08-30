@@ -28,10 +28,10 @@
                     <strong>Bairro: </strong> {{ $endereco->bairro }}
                 </li>
                 <li>
-                    <strong>Cidade: </strong> {{ $endereco->telefone }}
+                    <strong>Cidade: </strong> {{ $endereco->cidade }}
                 </li>
                 <li>
-                    <strong>Estado: </strong> {{ $endereco->telefone }}
+                    <strong>Estado: </strong> {{ $endereco->estado }}
                 </li>
             </ul>
             <form action="{{ route('enderecos.destroy', $endereco->id) }}" method="POST">

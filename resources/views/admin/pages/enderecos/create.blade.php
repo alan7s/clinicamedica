@@ -19,7 +19,7 @@
 
                 @include('admin.pages.enderecos._partials.form')
                 <div class="form-group">
-                    <button type="submit" class="btn btn-dark">Cadastrar endereco</button>
+                    <button type="submit" class="btn btn-dark">Cadastrar endereço</button>
                 </div>
             </form>
         </div>

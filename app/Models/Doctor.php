@@ -12,4 +12,8 @@ class Doctor extends Model
     public function employees(){ // retorna employee de determinado doctor
         $this->belongsTo(Employee::class);
     }
+
+    public function agendas(){ //retorna agenda do doctor
+        return $this->hasMany(Agenda::class);
+    }
 }

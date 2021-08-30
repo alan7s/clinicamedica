@@ -9,7 +9,7 @@
         {{--<li class="breadcrumb-item active"><a href="{{ route('profiles.show', $profile->id) }}">{{$profile->nome}}</a></li>--}}
         {{--<li class="breadcrumb-item active"><a href="{{ route('employees.profile.index', $profile->id) }}">Detalhes</a></li>--}}
     </ol>
-    <h1>Detalhes do médico {{$profile->where('id', $employee->profile_id)->first()->nome}}<i class="fas fa-plus-square"></i></h1>
+    <h1>Detalhes do médico {{$profile->where('id', $employee->profile_id)->first()->nome}} <a href="{{route('doctors.employee.profile.create', [$employee->id])}}" class="btn btn-dark"><i class="fas fa-plus-square"></i></a></h1>
 @stop
 
 @section('content')
@@ -19,8 +19,10 @@
             <table class="table table-condensed">
                 <thead>
                     <tr>
-                        <th>id</th>
-                        <th>Data contrato</th>
+                        <th>ID</th>
+                        <th>Especialidade</th>
+                        <th>CRM</th>
+                        <th>Ação</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,8 +35,12 @@
                                 {{$doctor->especialidade}}
                             </td>
                             <td>
-                                {{--<a href="{{ route('employees.profile.edit', [$employee->id]) }}" class="btn btn-info"><i class="fas fa-pen-square"></i></a>
-                                <a href="{{ route('employees.profile.show', [$employee->id]) }}" class="btn btn-info"><i class="fas fa-eye"></i></a>--}}
+                                {{$doctor->crm}}
+                            </td>
+                            <td>
+                                <a href="{{ route('agendas.doctor.employee.profile.index', [$doctor->id]) }}" class="btn btn-info"><i class="fas fa-calendar-alt"></i></a>
+                                <a href="{{ route('doctors.employee.profile.edit', [$employee->id, $doctor->id]) }}" class="btn btn-info"><i class="fas fa-pen-square"></i></a>
+                                <a href="{{ route('doctors.employee.profile.show', [$employee->id, $doctor->id]) }}" class="btn btn-info"><i class="fas fa-eye"></i></a>
                             </td>
                         </tr>
                     @endforeach

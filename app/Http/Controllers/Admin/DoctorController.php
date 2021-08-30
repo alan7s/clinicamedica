@@ -38,8 +38,9 @@ class DoctorController extends Controller
         if(!$employee = $this->employee->where('id', $idEmployee)->first()){
             return redirect()->back();
         }
-
+        $profile = $this->profile;
         return view('admin.pages.profiles.employees.doctors.create', [
+            'profile' => $profile,
             'employee' => $employee,
         ]);
     }
@@ -56,12 +57,14 @@ class DoctorController extends Controller
     public function edit($idEmployee, $idDoctor){
         $employee = $this->employee->where('id',$idEmployee)->first();
         $doctor = $this->repository->find($idDoctor);
+        $profile = $this->profile;
 
         if(!$employee = $this->employee->where('id', $idEmployee)->first()){
             return redirect()->back();
         }
 
         return view('admin.pages.profiles.employees.doctors.edit', [
+            'profile' => $profile,
             'employee' => $employee,
             'doctor' => $doctor,
         ]);
@@ -83,12 +86,14 @@ class DoctorController extends Controller
     public function show($idEmployee, $idDoctor){
         $employee = $this->employee->where('id',$idEmployee)->first();
         $doctor = $this->repository->find($idDoctor);
+        $profile = $this->profile;
 
         if(!$employee = $this->employee->where('id', $idEmployee)->first()){
             return redirect()->back();
         }
 
         return view('admin.pages.profiles.employees.doctors.show', [
+            'profile' => $profile,
             'employee' => $employee,
             'doctor' => $doctor,
         ]);

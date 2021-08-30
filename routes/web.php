@@ -8,10 +8,20 @@ use App\Http\Controllers\Admin\{
     ProfileController,
     EmployeeController,
     EnderecoController,
-    PatientController
+    PatientController,
+    AgendaController
 };
 
 Route::prefix('admin')->group(function(){
+
+    //routes agendas
+    Route::get('doctors/{idDoctor}/agendas/create', [AgendaController::class, 'create'])->name('agendas.doctor.employee.profile.create');
+    Route::delete('doctors/{idDoctor}/agendas/{idagenda}', [AgendaController::class, 'destroy'])->name('agendas.doctor.employee.profile.destroy');
+    Route::get('doctors/{idDoctor}/agendas/{idagenda}', [AgendaController::class, 'show'])->name('agendas.doctor.employee.profile.show');
+    Route::put('doctors/{idDoctor}/agendas/{idagenda}', [AgendaController::class, 'update'])->name('agendas.doctor.employee.profile.update');
+    Route::get('doctors/{idDoctor}/agendas/{idagenda}/edit', [AgendaController::class, 'edit'])->name('agendas.doctor.employee.profile.edit');
+    Route::post('doctors/{idDoctor}/agendas/', [AgendaController::class, 'store'])->name('agendas.doctor.employee.profile.store');
+    Route::get('doctors/{idDoctor}/agendas/', [AgendaController::class, 'index'])->name('agendas.doctor.employee.profile.index');
 
     //routes enderecos
     Route::get('enderecos/create', [EnderecoController::class, 'create'])->name('enderecos.create');
