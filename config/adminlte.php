@@ -240,6 +240,21 @@ return [
             'url'  => 'admin/enderecos',
             'icon' => 'fas fa-map-marked'
         ],
+        [
+            'text' => 'Funcionários',
+            'url'  => 'admin/listagem/funcionarios',
+            'icon' => 'fas fa-user-tie'
+        ],
+        [
+            'text' => 'Pacientes',
+            'url'  => 'admin/listagem/pacientes',
+            'icon' => 'fas fa-user-injured'
+        ],
+        [
+            'text' => 'Agendamentos',
+            'url'  => 'admin/listagem/agendamentos',
+            'icon' => 'fas fa-calendar-alt'
+        ],
     ],
 
     /*

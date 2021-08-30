@@ -9,10 +9,16 @@ use App\Http\Controllers\Admin\{
     EmployeeController,
     EnderecoController,
     PatientController,
-    AgendaController
+    AgendaController,
+    ListagemController
 };
 
 Route::prefix('admin')->group(function(){
+
+    //route listagem
+    Route::get('listagem/agendamentos', [ListagemController::class, 'agendamentos'])->name('agendamentos.listagem');
+    Route::get('listagem/pacientes', [ListagemController::class, 'pacientes'])->name('pacientes.listagem');
+    Route::get('listagem/funcionarios', [ListagemController::class, 'funcionarios'])->name('funcionarios.listagem');
 
     //routes agendas
     Route::get('doctors/{idDoctor}/agendas/create', [AgendaController::class, 'create'])->name('agendas.doctor.employee.profile.create');
