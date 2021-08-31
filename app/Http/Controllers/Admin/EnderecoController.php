@@ -63,6 +63,10 @@ class EnderecoController extends Controller
             'enderecos' => $enderecos,
             'filters' => $filters,
         ]);
+        /*return view('admin.pages.cadastros.funcionarios.index', [
+            'enderecos' => $enderecos,
+            'filters' => $filters,
+        ]);*/
     }
 
     public function edit($id){

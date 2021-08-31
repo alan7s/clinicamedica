@@ -10,10 +10,17 @@ use App\Http\Controllers\Admin\{
     EnderecoController,
     PatientController,
     AgendaController,
-    ListagemController
+    ListagemController,
+    CadastroController
 };
 
 Route::prefix('admin')->group(function(){
+
+    //route cadastros
+    Route::post('cadastros/pacientes', [CadastroController::class, 'storePaciente'])->name('pacientes.store');
+    Route::get('cadastros/pacientes', [CadastroController::class, 'createPaciente'])->name('pacientes.create');
+    Route::post('cadastros/funcionarios', [CadastroController::class, 'storeFuncionario'])->name('funcionarios.store');
+    Route::get('cadastros/funcionarios', [CadastroController::class, 'createFuncionario'])->name('funcionarios.create');
 
     //route listagem
     Route::get('listagem/agendamentos', [ListagemController::class, 'agendamentos'])->name('agendamentos.listagem');

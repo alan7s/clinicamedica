@@ -241,6 +241,11 @@ return [
             'icon' => 'fas fa-map-marked'
         ],
         [
+            'text' => 'Cadastro Funcionários',
+            'url'  => 'admin/cadastros/funcionarios',
+            'icon' => 'fas fa-user-tie'
+        ],
+        [
             'text' => 'Funcionários',
             'url'  => 'admin/listagem/funcionarios',
             'icon' => 'fas fa-user-tie'
@@ -248,6 +253,11 @@ return [
         [
             'text' => 'Pacientes',
             'url'  => 'admin/listagem/pacientes',
+            'icon' => 'fas fa-user-injured'
+        ],
+        [
+            'text' => 'Cadastro Paciente',
+            'url'  => 'admin/cadastros/pacientes',
             'icon' => 'fas fa-user-injured'
         ],
         [
