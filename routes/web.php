@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\{
 Route::prefix('admin')->group(function(){
 
     //route cadastros
+    Route::any('cadastros/searchf', [EnderecoController::class, 'searchF'])->name('enderecos.searchf');
     Route::post('cadastros/pacientes', [CadastroController::class, 'storePaciente'])->name('pacientes.store');
     Route::get('cadastros/pacientes', [CadastroController::class, 'createPaciente'])->name('pacientes.create');
     Route::post('cadastros/funcionarios', [CadastroController::class, 'storeFuncionario'])->name('funcionarios.store');

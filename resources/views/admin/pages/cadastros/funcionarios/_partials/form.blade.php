@@ -13,7 +13,7 @@
     <label>Telefone:</label>
     <input type="number" name="telefone" class="form-control" placeholder="Telefone">
 </div>
-<div>
+<div class="form-group">
     <label>CEP:</label>
     <input type="text" name="cep" class="form-control" placeholder="CEP" value="{{$enderecos->first()->cep ?? ''}}">
 </div>
@@ -47,12 +47,30 @@
 </div>
 {{--se medico--}}
 <div class="form-group">
-    <label>Especialidade:</label>
-    <input type="text" name="especialidade" class="form-control" placeholder="Especialidade">
+    <input type="checkbox" name="c1" onclick="showMe('medico')"> Funcionáro é médico
 </div>
-<div class="form-group">
-    <label>CRM:</label>
-    <input type="text" name="crm" class="form-control" placeholder="CRM">
+<script>
+    function showMe(box) {
+        var chboxs = document.getElementsByName("c1");
+        var vis = "none";
+        for(var i=0;i<chboxs.length;i++) { 
+            if(chboxs[i].checked){
+             vis = "block";
+                break;
+            }
+        }
+        document.getElementById(box).style.display = vis;
+    }
+</script>
+<div id="medico" style="display:none">
+    <div class="form-group">
+        <label>Especialidade:</label>
+        <input type="text" name="especialidade" class="form-control" placeholder="Especialidade">
+    </div>
+    <div class="form-group">
+        <label>CRM:</label>
+        <input type="text" name="crm" class="form-control" placeholder="CRM">
+    </div>
 </div>
 <div class="form-group">
     <button type="submit" class="btn btn-info">Salvar</button>

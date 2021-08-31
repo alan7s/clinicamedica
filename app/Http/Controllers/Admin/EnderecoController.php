@@ -59,6 +59,17 @@ class EnderecoController extends Controller
         $filters = $request->except('_token');
         $enderecos = $this->repository->search($request->filter);
 
+        return view('admin.pages.enderecos.index', [
+            'enderecos' => $enderecos,
+            'filters' => $filters,
+        ]);
+    }
+
+    public function searchF(Request $request){
+        //dd($request->all());
+        $filters = $request->except('_token');
+        $enderecos = $this->repository->search($request->filter);
+
         /*return view('admin.pages.enderecos.index', [
             'enderecos' => $enderecos,
             'filters' => $filters,
