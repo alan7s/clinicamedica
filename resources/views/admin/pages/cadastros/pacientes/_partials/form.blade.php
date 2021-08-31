@@ -1,7 +1,6 @@
 @include('admin.includes.alerts')
 
 @csrf
-
 <div class="form-group">
     <label>Nome:</label>
     <input type="text" name="nome" class="form-control" placeholder="Nome">
@@ -14,25 +13,25 @@
     <label>Telefone:</label>
     <input type="number" name="telefone" class="form-control" placeholder="Telefone">
 </div>
-<div class="form-group"> {{--pega cep e preenche--}}
+<div class="form-group">
     <label>CEP:</label>
-    <input type="number" name="cep" class="form-control" placeholder="CEP" value="{{$profile->cep ?? old('cep')}}">
+    <input type="text" name="cep" class="form-control" placeholder="CEP" value="{{$enderecos->first()->cep ?? ''}}">
 </div>
 <div class="form-group">
     <label>Logradouro:</label>
-    <input type="text" name="logradouro" class="form-control" placeholder="Logradouro" value="{{$profile->logradouro ?? old('logradouro')}}">
+    <input type="text" name="logradouro" class="form-control" placeholder="Logradouro" value="{{$enderecos->first()->logradouro ?? ''}}">
 </div>
 <div class="form-group">
     <label>Bairro:</label>
-    <input type="text" name="bairro" class="form-control" placeholder="Bairro" value="{{$profile->bairro ?? old('bairro')}}">
+    <input type="text" name="bairro" class="form-control" placeholder="Bairro" value="{{$enderecos->first()->bairro ?? ''}}">
 </div>
 <div class="form-group">
     <label>Cidade:</label>
-    <input type="text" name="cidade" class="form-control" placeholder="Cidade" value="{{$profile->cidade ?? old('cidade')}}">
+    <input type="text" name="cidade" class="form-control" placeholder="Cidade" value="{{$enderecos->first()->cidade ?? ''}}">
 </div>
 <div class="form-group">
     <label>Estado:</label>
-    <input type="text" name="estado" class="form-control" placeholder="Estado" value="{{$profile->estado ?? old('estado')}}">
+    <input type="text" name="estado" class="form-control" placeholder="Estado" value="{{$enderecos->first()->estado ?? ''}}">
 </div>
 <div class="form-group">
     <label>Peso:</label>

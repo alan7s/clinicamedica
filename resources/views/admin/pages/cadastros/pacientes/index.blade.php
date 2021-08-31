@@ -14,6 +14,15 @@
 
 @section('content')
     <div class="card">
+        <div class="card-header">
+            <form action="{{route('enderecos.searchp')}}" method="POST" class="form form-inline">
+                @csrf
+                <div class="form-group">
+                    <input type="text" name="filter" placeholder="Consultar CEP" class="form-control" value="{{ $filters['filter'] ?? '' }}">
+                    <button type="submit" class="btn btn-dark"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+        </div>
         <div class="card-body">
             <form action="{{ route('pacientes.store')}}" method="POST">
                 @include('admin.pages.cadastros.pacientes._partials.form')
