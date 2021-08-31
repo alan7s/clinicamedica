@@ -13,27 +13,25 @@
     <label>Telefone:</label>
     <input type="number" name="telefone" class="form-control" placeholder="Telefone">
 </div>
-<form action="{{route('enderecos.search')}}" method="POST" class="form form-inline">
-    @csrf
+<div>
     <label>CEP:</label>
-    <input type="text" name="filter" class="form-control" placeholder="CEP">
-    <button type="submit" class="btn btn-info">Buscar endereço</button>
-</form>
+    <input type="text" name="cep" class="form-control" placeholder="CEP" value="{{$enderecos->first()->cep ?? ''}}">
+</div>
 <div class="form-group">
     <label>Logradouro:</label>
-    <input type="text" name="logradouro" class="form-control" placeholder="Logradouro" value="{{$enderecos->logradouro}}">
+    <input type="text" name="logradouro" class="form-control" placeholder="Logradouro" value="{{$enderecos->first()->logradouro ?? ''}}">
 </div>
 <div class="form-group">
     <label>Bairro:</label>
-    {{--<input type="text" name="bairro" class="form-control" placeholder="Bairro" value="{{$enderecos->where('cep', $CEP = $_GET['cep'])->first()->bairro}}">--}}
+    <input type="text" name="bairro" class="form-control" placeholder="Bairro" value="{{$enderecos->first()->bairro ?? ''}}">
 </div>
 <div class="form-group">
     <label>Cidade:</label>
-    {{--<input type="text" name="cidade" class="form-control" placeholder="Cidade" value="{{$CEP = $_POST['cep']}}">--}}
+    <input type="text" name="cidade" class="form-control" placeholder="Cidade" value="{{$enderecos->first()->cidade ?? ''}}">
 </div>
 <div class="form-group">
     <label>Estado:</label>
-    <input type="text" name="estado" class="form-control" placeholder="Estado" value="{{$profile->estado ?? old('estado')}}">
+    <input type="text" name="estado" class="form-control" placeholder="Estado" value="{{$enderecos->first()->estado ?? ''}}">
 </div>
 <div class="form-group">
     <label>Data Contrato:</label>

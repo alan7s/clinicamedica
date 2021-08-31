@@ -15,9 +15,18 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-            <form action="{{ route('funcionarios.store')}}" method="POST">
-                @include('admin.pages.cadastros.funcionarios._partials.form')
-            </form>
+            <div class="card-header">
+                <form action="{{route('enderecos.search')}}" method="POST" class="form form-inline">
+                    @csrf
+                    <input type="text" name="filter" placeholder="Pesquisar" class="form-control" value="{{ $filters['filter'] ?? '' }}">
+                    <button type="submit" class="btn btn-dark"><i class="fas fa-search"></i> Buscar endereço</button>
+                </form>
+            </div>
+            <div>
+                <form action="{{ route('funcionarios.store')}}" method="POST">
+                    @include('admin.pages.cadastros.funcionarios._partials.form')
+                </form>
+            </div>
         </div>
     </div>
 @endsection
