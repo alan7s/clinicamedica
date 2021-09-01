@@ -14,7 +14,7 @@ use App\Http\Controllers\Admin\{
     CadastroController
 };
 
-Route::prefix('admin')->group(function(){
+Route::prefix('admin')->middleware ('auth') -> group(function(){
 
     //route cadastros
     Route::any('cadastros/searchp', [EnderecoController::class, 'searchP'])->name('enderecos.searchp');
@@ -108,8 +108,19 @@ Route::prefix('admin')->group(function(){
 });
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('web/home');
 });
 
+Route::get('/home', function () {
+    return view('web/home');
+});
+
+Route::get('/galeria', function () {
+    return view('web/galeria');
+});
+
+
+
 //routes auth
+Auth::routes();
 Auth::routes();
