@@ -107,6 +107,18 @@ Route::prefix('admin')->middleware ('auth') -> group(function(){
     Route::get('/', [PlanController::class, 'index'])->name('admin.index');
 });
 
+Route::prefix('/endereco')-> group(function(){
+    //routes doctors
+    Route::get('enderecos/create', [EnderecoController::class, 'create'])->name('enderecos.create');
+    Route::put('enderecos/{id}', [EnderecoController::class, 'update'])->name('enderecos.update');
+    Route::get('enderecos/{id}/edit', [EnderecoController::class, 'edit'])->name('enderecos.edit');
+    Route::any('enderecos/search', [EnderecoController::class, 'search'])->name('enderecos.search');
+    Route::delete('enderecos/{id}', [EnderecoController::class, 'destroy'])->name('enderecos.destroy');
+    Route::get('enderecos/{id}', [EnderecoController::class, 'show'])->name('enderecos.show');
+    Route::post('enderecos', [EnderecoController::class, 'store'])->name('enderecos.store');
+    Route::get('enderecos', [EnderecoController::class, 'index'])->name('enderecos.index');
+ 
+});   
 Route::get('/', function () {
     return view('web/home');
 });
@@ -117,6 +129,10 @@ Route::get('/home', function () {
 
 Route::get('/galeria', function () {
     return view('web/galeria');
+});
+
+Route::get('/endereco', function () {
+    return view('web/endereco');
 });
 
 
