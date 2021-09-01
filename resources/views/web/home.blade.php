@@ -69,7 +69,7 @@
       </div></header>
     <section class="u-align-center u-clearfix u-image u-shading u-section-1" src="" data-image-width="256" data-image-height="256" id="sec-aca6">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-text u-text-default u-title u-text-1">Bem vindo ao CefeMed!</h1>
+        <h1 class="u-text u-text-default u-title u-text-1">Bem vindo ao CefetMed!</h1>
         <p class="u-align-justify u-large-text u-text u-text-variant u-text-2">Muito bem vindo a nossa clínica Médica, CefetMed! O intuito da nossa clínica é realizar diagnósticos e tratamentos clínicos&nbsp; sem nenhuma cirurgia. Atendemos pacientes de todas as idades, avaliando-o de maneira mais eficaz possível e gerenciar seus cuidados de acordo com a especialidade necessária.</p>
         <p class="u-align-justify u-text u-text-3">Nossa missão na clínica é resolver infermidades possíveis de serem resolvidas sem colocar o paciente em situações, como cirurgias, remédios mais fortes, etc, que não seriam necessárias nessas ocasições. O bem estar do paciente é nossa prioridade número um e por isso que nossa clínica possui médicos renomeados e conceituados em suas áreas.</p>
       </div>
