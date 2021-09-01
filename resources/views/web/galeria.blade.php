@@ -49,6 +49,7 @@
             <ul class="u-custom-font u-font-pt-sans u-nav u-spacing-2 u-unstyled u-nav-1">
                 <li class="u-nav-item"><a class="u-border-2 u-border-grey-75 u-button-style u-nav-link u-palette-1-base u-text-active-white u-text-hover-white u-text-white" href="home" style="padding: 10px 20px;">Home</a></li>
                 <li class="u-nav-item"><a class="u-border-2 u-border-grey-75 u-button-style u-nav-link u-palette-1-base u-text-active-white u-text-hover-white u-text-white" href="galeria" style="padding: 10px 20px;">Galeira</a>
+                <li class="u-nav-item"><a class="u-border-2 u-border-grey-75 u-button-style u-nav-link u-palette-1-base u-text-active-white u-text-hover-white u-text-white" href="endereco" style="padding: 10px 20px;">Novo Endereço</a>
                 <li class="u-nav-item"><a class="u-border-2 u-border-grey-75 u-button-style u-nav-link u-palette-1-base u-text-active-white u-text-hover-white u-text-white" href="login" style="padding: 10px 20px;">Login</a></li>
 
                 </li></ul>
