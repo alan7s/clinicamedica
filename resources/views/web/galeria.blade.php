@@ -28,7 +28,8 @@
   </head>
   <body class="u-body">
   <header class="u-border-2 u-border-grey-75 u-clearfix u-header u-palette-1-light-1 u-header" id="sec-5350"><div class="u-clearfix u-sheet u-sheet-1">
-        <a class="u-image u-logo u-image-1">
+
+        <a class="u-image u-logo u-image-1" style="width: 200px; " >
           <img src="assets/images/cefet_1.png" class="u-logo-image u-logo-image-1">
         </a>
         <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1" data-responsive-from="MD">
